@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Todo } from '../models/Todo';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private todoService: TodoService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  @Input() todo!: Todo;
+
+  onDelete(): void{
+    this.todoService.deleteTodo(this.todo.id).subscribe();
+    location.reload();
+  }
+
+  onEdit(id: number){
+    this.router.navigate(['/edit', this.todo.id])
+  }
 }

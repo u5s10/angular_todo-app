@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+import { Todo } from '../models/Todo';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-add',
@@ -7,9 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoAddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private todoService: TodoService, private route: ActivatedRoute,
+    private router: Router) { }
+
+  todoForm = this.fb.group({
+    title: ['', Validators.required],
+    urgency: [1, Validators.required]
+  })
 
   ngOnInit(): void {
+  }
+
+  urgencyArray: number[] = [1, 2, 3];
+
+  onSubmit(): void {
+    let todo: Todo = { ...this.todoForm.value, urgency: +this.todoForm.value.urgency };
+    this.todoService.postTodo(todo).subscribe((_) => {
+      this.router.navigate(['list']);
+    });
   }
 
 }

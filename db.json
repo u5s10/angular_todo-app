@@ -1,9 +1,19 @@
 {
-    "todos": [
-      { "id": 0, "title": "Do the dishes", "urgency": 0 },
-      { "id": 1, "title": "Walk the dog", "urgency": 1 },
-      { "id": 2, "title": "Take out the trash", "urgency": 0 },
-      { "id": 3, "title": "Buy groceries", "urgency": 1 },
-      { "id": 4, "title": "Clean the windows", "urgency": 0 }
-    ]
-  }
+  "todos": [
+    {
+      "id": 1,
+      "title": "Walk the dog",
+      "urgency": 1
+    },
+    {
+      "id": 2,
+      "title": "Take out the trash",
+      "urgency": "3"
+    },
+    {
+      "id": 3,
+      "title": "Buy groceries",
+      "urgency": "3"
+    }
+  ]
+}

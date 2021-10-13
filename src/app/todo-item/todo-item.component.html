@@ -1,1 +1,7 @@
-<p>todo-item works!</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ todo.title }} <span>{{todo.urgency}}</span></h5>
+    <a (click)="onEdit(todo.id)" class="btn btn-primary btn-sm" role="button">Edit</a>
+    <a (click)="onDelete()" class="btn btn-danger btn-sm" role="button">Delete</a>
+  </div>
+</div>
