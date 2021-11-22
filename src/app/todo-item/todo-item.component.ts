@@ -17,12 +17,15 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todo!: Todo;
 
-  onDelete(): void{
-    this.todoService.deleteTodo(this.todo.id).subscribe();
-    location.reload();
+  onDelete(): void {
+    this.todoService.deleteTodo(this.todo.id).subscribe(
+      () => {
+        location.reload();
+      }
+    );
   }
 
-  onEdit(id: number){
+  onEdit(id: number) {
     this.router.navigate(['/edit', this.todo.id])
   }
 }

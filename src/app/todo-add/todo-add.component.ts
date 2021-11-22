@@ -26,6 +26,10 @@ export class TodoAddComponent implements OnInit {
   urgencyArray: number[] = [1, 2, 3];
 
   onSubmit(): void {
+    if(this.todoForm.invalid){
+      alert(`Form is invalid`);
+      return;
+    }
     let todo: Todo = { ...this.todoForm.value, urgency: +this.todoForm.value.urgency };
     this.todoService.postTodo(todo).subscribe((_) => {
       this.router.navigate(['list']);
