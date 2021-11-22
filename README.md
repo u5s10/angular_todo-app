@@ -1,6 +1,12 @@
 # Angular todo-app
 Simple CRUD application in form of todo-list app made in Angular. Main reason for creating this app was to familiarize myself with Angular Routing, working with http requests in Angular using rxjs library. App uses Bootstrap for styling and mobile view. [JSON server](https://www.npmjs.com/package/json-server) has been for mocking the backend.
 
+## Screenshots
+![Alt text](R3wuHp22RO.png "Main view")
+![Alt text](AGqM2oWRfm.png "Add new  task")
+![Alt text](UcpBWdblQW.png "Edit existing task")
+
+
 ## Installation
 
 ```bash
